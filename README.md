@@ -28,7 +28,6 @@ npm install webpack webpack-cli --save-dev
 ```
 * Install dependencies
 ```
-npm install --save lodash
 npm install --save-dev style-loader css-loader
 npm install --save-dev html-webpack-plugin
 npm install --save-dev copy-webpack-plugin
@@ -51,9 +50,6 @@ npm start
 - HTML5 & CSS3
 - Javascript
 - Webpack
-
-## Live Demo
-[To Do List](https://crgc.github.io/microverse-leaderboard/)
 
 ## Authors
 
