@@ -21,6 +21,7 @@
   "homepage": "https://github.com/crgc/microverse-leaderboard#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.2.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
