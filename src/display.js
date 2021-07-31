@@ -1,27 +1,24 @@
+import { getScores } from './request';
 import clearInputs from './clear';
 
-export default class Display {
-  constructor(request) {
-    this.request = request;
-  }
+const render = () => {
+  const scoresDiv = document.getElementsByClassName('scores')[0];
+  scoresDiv.textContent = '';
 
-  render() {
-    const scoresDiv = document.getElementsByClassName('scores')[0];
-    scoresDiv.textContent = '';
+  const createDiv = () => document.createElement('div');
+  getScores().then((scores) => {
+    scores.forEach((score, index) => {
+      const isEven = (n) => n % 2 === 0;
 
-    const createDiv = () => document.createElement('div');
-    this.request.getScores().then((scores) => {
-      scores.forEach((score, index) => {
-        const isEven = (n) => n % 2 === 0;
+      const scoreDiv = createDiv();
+      scoreDiv.className = isEven(index) ? 'score' : 'score bg-grey';
+      scoreDiv.textContent = `${score.user}: ${score.score}`;
 
-        const scoreDiv = createDiv();
-        scoreDiv.className = isEven(index) ? 'score' : 'score bg-grey';
-        scoreDiv.textContent = `${score.user}: ${score.score}`;
+      scoresDiv.appendChild(scoreDiv);
 
-        scoresDiv.appendChild(scoreDiv);
-
-        clearInputs();
-      });
+      clearInputs();
     });
-  }
-}
+  });
+};
+
+export default render;

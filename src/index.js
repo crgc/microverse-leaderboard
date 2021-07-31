@@ -1,5 +1,4 @@
 import './style.css';
-import App from './app';
+import start from './app';
 
-const app = new App();
-app.start();
+start();

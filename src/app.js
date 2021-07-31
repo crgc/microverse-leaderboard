@@ -1,32 +1,27 @@
-import Display from './display';
-import Request from './request';
+import render from './display';
+import { addScore } from './request';
 import clearInputs from './clear';
 
-export default class App {
-  constructor() {
-    this.request = new Request('yTswnMH2OFHzuRjtAJZe');
-    this.display = new Display(this.request);
-  }
+const renderDisplay = () => {
+  const submitBtn = document.getElementById('submit-btn');
+  const refreshBtn = document.getElementById('refresh-btn');
 
-  renderDisplay() {
-    const submitBtn = document.getElementById('submit-btn');
-    const refreshBtn = document.getElementById('refresh-btn');
+  submitBtn.addEventListener('click', () => {
+    const inputName = document.getElementsByClassName('input-name')[0];
+    const inputScore = document.getElementsByClassName('input-score')[0];
 
-    submitBtn.addEventListener('click', () => {
-      const inputName = document.getElementsByClassName('input-name')[0];
-      const inputScore = document.getElementsByClassName('input-score')[0];
+    addScore(inputName.value, inputScore.value).then(() => clearInputs());
+  });
 
-      this.request.addScore(inputName.value, inputScore.value).then(() => clearInputs());
-    });
+  refreshBtn.addEventListener('click', () => {
+    render();
+  });
 
-    refreshBtn.addEventListener('click', () => {
-      this.display.render();
-    });
+  render();
+};
 
-    this.display.render();
-  }
+const start = () => {
+  renderDisplay();
+};
 
-  start() {
-    this.renderDisplay();
-  }
-}
+export default start;
