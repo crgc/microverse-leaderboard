@@ -4,6 +4,10 @@ main {
   height: 100%;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 main {
   width: 800px;
   margin: 0 auto;
@@ -15,10 +19,11 @@ h1 {
 
 h2 {
   margin: 0;
+  font-size: 40px;
 }
 
 header {
-  margin: 2rem 0 3rem 1rem;
+  margin: 2rem 0 3rem -3rem;
 }
 
 .bg-grey {
@@ -26,7 +31,11 @@ header {
 }
 
 .main-content {
-  margin: 0 auto;
+  margin: 4rem auto 0 auto;
+}
+
+.main-content,
+.recent-header {
   justify-content: space-between;
 }
 
@@ -36,18 +45,34 @@ header {
   display: flex;
 }
 
-.recent-scores,
-.add-score {
-  width: 45%;
+.recent-scores {
+  width: 55%;
 }
 
-#refresh-btn {
-  margin-left: 3rem;
+.add-score {
+  width: 40%;
+}
+
+.add-score h2 {
+  text-align: center;
+}
+
+button {
+  background-color: white;
+}
+
+button,
+.scores,
+input[type=text] {
+  border: 0.2rem solid black;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .scores {
-  margin-top: 1rem;
-  border: 0.2rem solid black;
+  margin-top: 2rem;
 }
 
 .score {
@@ -57,13 +82,27 @@ header {
 
 .inputs {
   flex-direction: column;
-  margin: 1rem 0 1rem 0;
+  margin: 2rem 0 1.5rem 0;
 }
 
 .input-score {
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+input[type=text] {
+  padding: 0;
+  outline: none;
+  height: 2rem;
+  font-size: 16px;
+  background-color: inherit;
 }
 
 .submit-btn {
   text-align: right;
+}
+
+#submit-btn,
+#refresh-btn {
+  width: 30%;
+  padding: 0.5rem 1rem;
 }
