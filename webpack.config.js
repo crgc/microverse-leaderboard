@@ -1,23 +1,24 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); /* eslint-disable-line */
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
-  devtool: 'inline-source-map',
+  entry: {
+    index: './src/index.js',
+  },
   devServer: {
     contentBase: './dist',
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+  ],
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Leaderboard',
-    }),
-  ],
   module: {
     rules: [
       {
