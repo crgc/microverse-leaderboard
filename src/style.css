@@ -1,0 +1,69 @@
+html,
+body,
+main {
+  height: 100%;
+}
+
+main {
+  width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  margin: 0;
+}
+
+header {
+  margin: 2rem 0 3rem 1rem;
+}
+
+.bg-grey {
+  background-color: #ddd;
+}
+
+.main-content {
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.main-content,
+.recent-header,
+.inputs {
+  display: flex;
+}
+
+.recent-scores,
+.add-score {
+  width: 45%;
+}
+
+#btn-refresh {
+  margin-left: 3rem;
+}
+
+.scores {
+  margin-top: 1rem;
+  border: 0.2rem solid black;
+}
+
+.score {
+  display: flex;
+  padding: 5px 10px;
+}
+
+.inputs {
+  flex-direction: column;
+  margin: 1rem 0 1rem 0;
+}
+
+.input-score {
+  margin-top: 0.5rem;
+}
+
+.submit-btn {
+  text-align: right;
+}
