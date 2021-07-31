@@ -44,6 +44,9 @@ npm start
 - Javascript
 - Webpack
 
+## Live Demo
+[Leaderboard](https://crgc.github.io/microverse-leaderboard/)
+
 ## Authors
 
 👤  **Carlos González**
